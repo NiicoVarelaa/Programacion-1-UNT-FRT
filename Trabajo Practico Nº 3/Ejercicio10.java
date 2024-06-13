@@ -6,13 +6,13 @@ public class Ejercicio10 {
         Random rd = new Random();
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Ingrese el Elemento que desea encontrar en el vector");
-        int elementoEncontrar = sc.nextInt();
+        System.out.println("Ingrese la Dimension del Vector");
+        int dimensionVector = sc.nextInt();
 
-        int vector [] = new int[50];
+        int vector [] = new int[dimensionVector];
         
         for (int i = 0; i < vector.length; i++) {
-            vector[i] = rd.nextInt(100) + 1;
+            vector[i] = rd.nextInt(1000) + 1;
         }
         
         int aux;
@@ -32,6 +32,10 @@ public class Ejercicio10 {
             System.out.print(vector[i] + " ");
         }
 
+        System.out.println("\n");
+        System.out.println("Ingrese el Elemento que desea encontrar en el vector");
+        int elementoEncontrar = sc.nextInt();
+
         int elementoEncontrado = busquedaBinaria(vector, elementoEncontrar);
 
         if (elementoEncontrado != -1) {
@@ -46,17 +50,22 @@ public class Ejercicio10 {
 
     public static int busquedaBinaria(int vector [], int elementoEncontrar) {
 
-        for (int i = 0; i < 25; i++) {
-            if (vector[i] == elementoEncontrar) {
-                return i;
+        int inicio = 0;
+        int fin = vector.length-1;
+        int medio;
+
+        while (inicio <= fin) {
+            medio = (inicio+fin)/2;    
+            if (vector[medio] == elementoEncontrar) {
+                return medio;
+            } else {
+                if (vector[medio] < elementoEncontrar) {
+                    inicio = medio + 1;
+                } else {
+                    fin = medio - 1;
+                }
             }
         }
-        
-        for (int i = 49; i > 25; i--) {
-            if (vector[i] == elementoEncontrar) {
-                return i;
-            }
-        } 
 
         return -1;
     }
