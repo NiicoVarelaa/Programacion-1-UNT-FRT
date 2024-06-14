@@ -6,16 +6,83 @@ public class Ejercicio20 {
         Random rd = new Random();
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Ingrese el Nombre");
-        int vector [] = new int[50];
+        System.out.println("Ingrese las Filas de la Matriz");
+        int filas = sc.nextInt();
 
-        for (int i = 65; i < 91; i++) {
-            for (int j = 65; j < 91; j++) {
-                vector[i] = rd.nextInt(100) + 1;
+        System.out.println("Ingrese las Columnas de la Matriz");
+        int columnas = sc.nextInt();
+
+        System.out.println("");
+
+        int matrizA [] [] = new int[filas] [columnas];
+        int matrizB [] [] = new int[filas] [columnas];
+        int matrizC [] [] = new int[filas] [columnas];
+
+        System.out.println("Matriz A");
+
+        for (int i = 0; i < matrizA.length; i++) {
+            for (int j = 0; j < matrizA[0].length; j++) {
+                matrizA [i] [j] = rd.nextInt(20) + 1;
+                System.out.print(matrizA[i] [j] + " ");
+            }
+            System.out.println("");
+        }
+
+        System.out.println("");
+        System.out.println("Matriz B");
+
+        for (int i = 0; i < matrizB.length; i++) {
+            for (int j = 0; j < matrizB[0].length; j++) {
+                matrizB [i] [j] = rd.nextInt(20) + 1;
+                System.out.print(matrizB[i] [j] + " ");
+            }
+            System.out.println("");
+        }
+
+        System.out.println("");
+        System.out.println("Matriz C = k * A");
+
+        int k = 3;
+
+        for (int i = 0; i < matrizC.length; i++) {
+            for (int j = 0; j < matrizC[0].length; j++) {
+                matrizC [i] [j] = matrizA [i] [j] * k;
             }
         }
+
+        for (int i = 0; i < matrizC.length; i++) {
+            for (int j = 0; j < matrizC[0].length; j++) {
+                System.out.print(matrizC[i] [j] + " ");
+            }
+            System.out.println("");
+        }
+
+        System.out.println("\n");
+        System.out.println("Matriz C = A + B");
+        sumaMatrizAyB(matrizA, matrizB, matrizC);
+        
+        
+
         sc.close();
     }
+
+    private static int[][] sumaMatrizAyB(int matrizA [][], int matrizB [][], int matrizC [][]) {
+        for (int i = 0; i < matrizC.length; i++) {
+            for (int j = 0; j < matrizC.length; j++) {
+                matrizC [i] [j] = matrizA [i] [j] + matrizB [i] [j];
+            }
+        }
+
+        for (int i = 0; i < matrizC.length; i++) {
+            for (int j = 0; j < matrizC[0].length; j++) {
+                System.out.print(matrizC[i] [j] + " ");
+            }
+            System.out.println("");
+        }
+        return matrizC;
+    }
+
+    
 
 }
 
