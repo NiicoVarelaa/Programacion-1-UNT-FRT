@@ -1,20 +1,39 @@
 import java.util.Random;
-import java.util.Scanner;
 
 public class Ejercicio17 {
     public static void main(String[] args) {
         Random rd = new Random();
-        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Ingrese el Nombre");
-        int vector [] = new int[50];
+        int vector [] = new int [20];
 
-        for (int i = 65; i < 91; i++) {
-            for (int j = 65; j < 91; j++) {
-                vector[i] = rd.nextInt(100) + 1;
+        for (int i = 0; i < vector.length; i++) {
+            vector [i] = rd.nextInt(30) + 1;
+        }
+
+        System.out.println();
+        for (int i = 0; i < vector.length; i++) {
+            System.out.print(vector[i] + " ");
+        }
+
+        int aux;
+
+        for (int i = 0; i < vector.length-1; i++) {
+            for (int j = 0; j < vector.length-1; j++) {
+                if (vector[j] < vector[j + 1]) {
+                    aux = vector[j];
+                    vector [j] = vector[j + 1];
+                    vector[j + 1] = aux;
+                }
             }
         }
-        sc.close();
+
+        System.out.println("\n");
+        System.out.println("Vector Ordenado Decrecientemente");
+        System.out.println();
+        for (int i = 0; i < vector.length; i++) {
+            System.out.print(vector[i] + " ");
+        }
+
     }
 
 }

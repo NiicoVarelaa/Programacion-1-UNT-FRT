@@ -11,10 +11,10 @@ public class Ejercicio7 {
     public static void vectorOrdenado() {
         Random rd = new Random();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese la Longitud del Vector");
-        int longitud = sc.nextInt();
+        System.out.println("Ingrese la Dimension del Vector");
+        int dimension = sc.nextInt();
 
-        int vector [] = new int[longitud];
+        int vector [] = new int[dimension];
 
         for (int i = 0; i < vector.length; i++) {
             vector [i] = rd.nextInt(100) + 1;
@@ -32,14 +32,15 @@ public class Ejercicio7 {
             }
         }
 
+        System.out.println("");
         System.out.println("Vector ordenado de menor a mayor:");
         for (int i = 0; i < vector.length; i++) {
             System.out.print(vector[i] + " ");
         }
 
         sc.close();
-    }
 
+    }
 }
 
 // Dado un vector de orden N de valores enteros, ordénelos de menor a mayor.

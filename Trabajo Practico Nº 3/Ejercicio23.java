@@ -6,14 +6,146 @@ public class Ejercicio23 {
         Random rd = new Random();
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Ingrese el Nombre");
-        int vector [] = new int[50];
+        System.out.println("Cantidad de Lluvia en la Ciudad");
+        System.out.println();
+        int matriz [][] = new int[24] [8];
+        int sumaAgua = 0;
+        int vectorDiaAgua [] = new int [8];
+        int vectorHoraAgua [] = new int [8];
 
-        for (int i = 65; i < 91; i++) {
-            for (int j = 65; j < 91; j++) {
-                vector[i] = rd.nextInt(100) + 1;
+        for (int i = 0; i < matriz.length; i++) {
+            matriz [i] [0] = i;
+        }
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 1; j < matriz[0].length; j++) { 
+                matriz[i][j] = rd.nextInt(100) + 1;
+                sumaAgua += matriz [i] [j];
+                vectorDiaAgua[j] += matriz [i] [j];
+            }
+        }        
+
+        System.out.println();
+        System.out.println("Hora     L      M       M       J       V       S       D");
+        System.out.println();
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                System.out.print(matriz[i][j] + "\t");
+            }
+            System.out.println();
+        }
+
+        int diaMaximo = 0;
+        int posiciónMaximo = 0;
+
+        int diaMinimo = 0;
+        int posiciónMenor = 0;
+
+        for (int i = 1; i < vectorDiaAgua.length; i++) {
+            if (i == 1) {
+                diaMinimo = vectorDiaAgua[i];
+                diaMaximo = vectorDiaAgua[i];
+            } else {
+                if (vectorDiaAgua[i] < diaMinimo) {
+                    diaMinimo = vectorDiaAgua[i];
+                    posiciónMenor = i;
+                }
+                if (vectorDiaAgua[i] > diaMaximo) {
+                    diaMaximo = vectorDiaAgua[i];
+                    posiciónMaximo = i;
+                }
             }
         }
+
+        
+
+        for (int j = 1; j < matriz[0].length; j++) {
+            int horaMenorAgua = Integer.MAX_VALUE; // Inicializamos con un valor alto
+            int horaMenor = -1; // Para almacenar la hora con menor agua
+
+            for (int i = 0; i < matriz.length; i++) {
+                if (matriz[i][j] < horaMenorAgua) {
+                    horaMenorAgua = matriz[i][j];
+                    horaMenor = matriz[i][0]; // Guardamos la hora correspondiente
+                }
+            }
+
+            vectorHoraAgua[j] = horaMenor; // Guardar la hora con menor agua para esta columna
+        }
+
+        switch (posiciónMaximo) {
+            case 1:
+                System.out.println("\n");
+                System.out.println("El Lunes es el Día con Mayor Agua con una Cantidad de: " + diaMaximo + "milimetros");
+                break;
+            case 2 :
+                System.out.println("\n");
+                System.out.println("El Martes es el Día con Mayor Agua con una Cantidad de: " + diaMaximo + "milimetros");
+                break;
+            case 3 :
+                System.out.println("\n");
+                System.out.println("El Miercoles es el Día con Mayor Agua con una Cantidad de: " + diaMaximo + "milimetros");
+                break;
+            case 4 :
+                System.out.println("\n");
+                System.out.println("El Jueves es el Día con Mayor Agua con una Cantidad de: " + diaMaximo + "milimetros");
+                break;
+            case 5 :
+                System.out.println("\n");
+                System.out.println("El Viernes es el Día con Mayor Agua con una Cantidad de: " + diaMaximo + "milimetros");
+                break;
+            case 6 :
+                System.out.println("\n");
+                System.out.println("El Sabado es el Día con Mayor Agua con una Cantidad de: " + diaMaximo + "milimetros");
+                break;
+            case 7 :
+                System.out.println("\n");
+                System.out.println("El Domingo es el Día con Mayor Agua con una Cantidad de: " + diaMaximo + "milimetros");
+                break;
+            default:
+                break;
+        }
+
+        switch (posiciónMenor) {
+            case 1:
+                System.out.println("\n");
+                System.out.println("El Lunes es el Día con Menor Agua con una Cantidad de: " + diaMinimo + "milimetros");
+                System.out.println("La Hora en que Menos Agua cayó ese Día fue a las: " + vectorHoraAgua[1] + "hs");
+                break;
+            case 2 :
+                System.out.println("\n");
+                System.out.println("El Martes es el Día con Menor Agua con una Cantidad de: " + diaMinimo + "milimetros");
+                System.out.println("La Hora en que Menos Agua cayó ese Día fue a las: " + vectorHoraAgua[2] + "hs");
+                break;
+            case 3 :
+                System.out.println("\n");
+                System.out.println("El Miercoles es el Día con Menor Agua con una Cantidad de: " + diaMinimo + "milimetros");
+                System.out.println("La Hora en que Menos Agua cayó ese Día fue a las: " + vectorHoraAgua[3] + "hs");
+                break;
+            case 4 :
+                System.out.println("\n");
+                System.out.println("El Jueves es el Día con Menor Agua con una Cantidad de: " + diaMinimo + "milimetros");
+                System.out.println("La Hora en que Menos Agua cayó ese Día fue a las: " + vectorHoraAgua[4] + "hs");
+                break;
+            case 5 :
+                System.out.println("\n");
+                System.out.println("El Viernes es el Día con Menor Agua con una Cantidad de: " + diaMinimo + "milimetros");
+                System.out.println("La Hora en que Menos Agua cayó ese Día fue a las: " + vectorHoraAgua[5] + "hs");
+                break;
+            case 6 :
+                System.out.println("\n");
+                System.out.println("El Sabado es el Día con Menor Agua con una Cantidad de: " + diaMinimo + "milimetros");
+                System.out.println("La Hora en que Menos Agua cayó ese Día fue a las: " + vectorHoraAgua[6] + "hs");
+                break;
+            case 7 :
+                System.out.println("\n");
+                System.out.println("El Domingo es el Día con Menor Agua con una Cantidad de: " + diaMinimo + "milimetros");
+                System.out.println("La Hora en que Menos Agua cayó ese Día fue a las: " + vectorHoraAgua[7] + "hs");
+                break;
+            default:
+                break;
+        }
+
         sc.close();
     }
 

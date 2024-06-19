@@ -17,28 +17,34 @@ public class Ejercicio13 {
         int vectorLegajo [] = new int [dimensionVector];
         String vectorApellidoNombre [] = new String [dimensionVector];
 
-        String aux;
+        String auxNombre;
+        int auxLegajo;
 
+        System.out.println("");
         for (int i = 0; i < dimensionVector; i++) {
+            System.out.println("");
             System.out.println("Ingrese el Apellido y el Nombre");
             String nombreCompleto = sc.nextLine();
             if (nombreCompleto.length() <= 30) {
                 vectorApellidoNombre[i] = nombreCompleto;
+                vectorLegajo [i] = rd.nextInt(9999999) + 9999999;
+                System.out.println("El Numero de Legajo para " + nombreCompleto + " es: " + vectorLegajo[i]);
             } else {
                 System.out.println("Error");
                 break;
             }
             
-            vectorLegajo [i] = rd.nextInt(9999999) + 9999999;
-            System.out.println("El Numero de Legajo para " + nombreCompleto + " es: " + vectorLegajo[i]);
         }
 
         for (int i = 0; i < vectorApellidoNombre.length; i++) {
             for (int j = 0; j < vectorApellidoNombre.length-1; j++) {
-                if (vectorApellidoNombre[j].compareTo(vectorApellidoNombre[j + 1]) > 0) {
-                    aux = vectorApellidoNombre [j];
+                if (vectorApellidoNombre[j].compareToIgnoreCase(vectorApellidoNombre[j + 1]) > 0) {
+                    auxNombre = vectorApellidoNombre [j];
+                    auxLegajo = vectorLegajo[j];
                     vectorApellidoNombre [j] = vectorApellidoNombre [j + 1];
-                    vectorApellidoNombre [j + 1] = aux;
+                    vectorLegajo [j] = vectorLegajo [j + 1];
+                    vectorApellidoNombre [j + 1] = auxNombre;
+                    vectorLegajo [j + 1] = auxLegajo;
                 }
             }
         }

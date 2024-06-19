@@ -29,7 +29,6 @@ public class Ejercicio11 {
 
         for (int i = 0; i < dimensionVector; i++) {
             for (int j = 0; j < dimensionVector-1; j++) {
-                // compareTo devuelve positivo si es una letra despues y negativo si es una letra antes
                 if (nombres[j].compareTo(nombres[j + 1]) > 0) {
                     aux = nombres [j];
                     nombres [j] = nombres [j + 1];
@@ -37,16 +36,6 @@ public class Ejercicio11 {
                 }
             }
         }
-
-        /* for (int i = 0; i < nombres.length; i++) {
-            for (int j = 0; j < nombres.length-1; j++) {
-                if (nombres[j].charAt(j) > nombres[j + 1].charAt(j)) {
-                    aux = nombres [j];
-                    nombres [j] = nombres [j + 1];
-                    nombres [j + 1] = aux;
-                }
-            }
-        } */
         
         System.out.println("\n");
         System.out.println("Los Nombres Ordenados Alfabeticamente son:");

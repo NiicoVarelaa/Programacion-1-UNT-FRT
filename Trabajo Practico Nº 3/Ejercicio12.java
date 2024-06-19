@@ -6,14 +6,90 @@ public class Ejercicio12 {
         Random rd = new Random();
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Ingrese el Nombre");
-        int vector [] = new int[50];
+        System.out.println("Ingrese la Dimension del Vector A");
+        int dimensionA = sc.nextInt();
+        int vectorA [] = new int[dimensionA];
 
-        for (int i = 65; i < 91; i++) {
-            for (int j = 65; j < 91; j++) {
-                vector[i] = rd.nextInt(100) + 1;
+        System.out.println("Ingrese la Dimension del Vector B");
+        int dimensionB = sc.nextInt();
+        int vectorB [] = new int[dimensionB];
+
+        int vectorC [] = new int[dimensionA + dimensionB];
+        
+        for (int i = 0; i < vectorA.length; i++) {
+            vectorA [i] = rd.nextInt(100) + 1;
+        }
+
+        System.out.println("");
+        System.out.println("Vector A");
+        for (int i = 0; i < vectorA.length; i++) {
+            System.out.print(vectorA[i] + " ");
+        }
+
+        for (int i = 0; i < vectorB.length; i++) {
+            vectorB [i] = rd.nextInt(100) + 1;
+        }
+
+        System.out.println("\n");
+        System.out.println("Vector B");
+        for (int i = 0; i < vectorB.length; i++) {
+            System.out.print(vectorB[i] + " ");
+        }
+
+        int auxA;
+        int auxB;
+
+        for (int i = 0; i < vectorA.length-1; i++) {
+            for (int j = 0; j < vectorA.length-1; j++) {
+                if (vectorA[j] > vectorA[j + 1]) {
+                    auxA = vectorA[j];
+                    vectorA [j] = vectorA[j + 1];
+                    vectorA[j + 1] = auxA;
+                }
             }
         }
+
+        System.out.println("\n");
+        System.out.println("Vector A ordenado Ascendentemente:");
+        System.out.println("");
+        for (int i = 0; i < vectorA.length; i++) {
+            System.out.print(vectorA[i] + " ");
+        }
+
+        for (int i = 0; i < vectorB.length-1; i++) {
+            for (int j = 0; j < vectorB.length-1; j++) {
+                if (vectorB[j] < vectorB[j + 1]) {
+                    auxB = vectorB[j];
+                    vectorB [j] = vectorB[j + 1];
+                    vectorB[j + 1] = auxB;
+                }
+            }
+        }
+
+        System.out.println("\n");
+        System.out.println("Vector B ordenado Decrecientemente:");
+        System.out.println("");
+        for (int i = 0; i < vectorB.length; i++) {
+            System.out.print(vectorB[i] + " ");
+        }
+
+        for (int i = 0; i < vectorB.length-1; i++) {
+            for (int j = 0; j < vectorB.length-1; j++) {
+                if (vectorB[j] > vectorB[j + 1]) {
+                    auxB = vectorB[j];
+                    vectorB [j] = vectorB[j + 1];
+                    vectorB[j + 1] = auxB;
+                }
+            }
+        }
+
+        System.out.println("\n");
+        System.out.println("Vector B ordenado Ascendentemente:");
+        System.out.println("");
+        for (int i = 0; i < vectorB.length; i++) {
+            System.out.print(vectorB[i] + " ");
+        }
+        
         sc.close();
     }
 
