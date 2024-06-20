@@ -3,12 +3,10 @@ import java.util.Scanner;
 
 public class Ejercicio6 {
     public static void main(String[] args) {
-
-        vectorMostrar();
-
+        mostrarVector();
     }
 
-    public static void vectorMostrar() {
+    public static void mostrarVector() {
         Random rd = new Random();
         Scanner sc = new Scanner(System.in);
 
@@ -44,6 +42,7 @@ public class Ejercicio6 {
 
         sc.close();
     }
+
 }
 
 /* Dado un vector de orden N, encuentre el elemento máximo, la cantidad de veces que se repite y la/s 

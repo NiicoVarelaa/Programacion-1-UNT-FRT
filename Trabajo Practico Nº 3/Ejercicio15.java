@@ -3,6 +3,10 @@ import java.util.Scanner;
 
 public class Ejercicio15 {
     public static void main(String[] args) {
+        mostrarVector();
+    }
+
+    private static void mostrarVector() {
         Random rd = new Random();
         Scanner sc = new Scanner(System.in);
 

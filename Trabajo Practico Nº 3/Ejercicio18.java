@@ -3,6 +3,10 @@ import java.util.Scanner;
 
 public class Ejercicio18 {
     public static void main(String[] args) {
+        mostrarMatriz();
+    }
+
+    private static void mostrarMatriz() {
         Random rd = new Random();
         Scanner sc = new Scanner(System.in);
 

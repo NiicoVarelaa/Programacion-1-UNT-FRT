@@ -2,12 +2,10 @@ import java.util.Random;
 
 public class Ejercicio3 {
     public static void main(String[] args) {
-
-        vectorMostrar();
-
+        mostrarVector();
     }
 
-    public static void vectorMostrar() {
+    public static void mostrarVector() {
         Random rd = new Random();
 
         int dimensionVector = rd.nextInt(100) + 1;
@@ -41,6 +39,7 @@ public class Ejercicio3 {
         System.out.println("La Cantidad de Veces que se Repite el Valor Máximo es: " + contadorValorMaximo + " veces");
 
     }
+
 }
 
 /* Cargar un conjunto de números de coma flotante en un vector. No se conoce la cantidad pero se 

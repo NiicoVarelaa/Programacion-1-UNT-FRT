@@ -3,6 +3,10 @@ import java.util.Scanner;
 
 public class Ejercicio12 {
     public static void main(String[] args) {
+        mostrarVectorC();
+    }
+
+    private static void mostrarVectorC() {
         Random rd = new Random();
         Scanner sc = new Scanner(System.in);
 
@@ -89,6 +93,30 @@ public class Ejercicio12 {
         for (int i = 0; i < vectorB.length; i++) {
             System.out.print(vectorB[i] + " ");
         }
+
+        int i = 0, j = 0, k = 0;
+        while (i < dimensionA && j < dimensionB) {
+            if (vectorA[i] < vectorB[j]) {
+                vectorC[k++] = vectorA[i++];
+            } else {
+                vectorC[k++] = vectorB[j++];
+            }
+        }
+
+        while (i < dimensionA) {
+            vectorC[k++] = vectorA[i++];
+        }
+
+        while (j < dimensionB) {
+            vectorC[k++] = vectorB[j++];
+        }
+
+        System.out.println("\n");
+        System.out.println("Vector C ordenado Ascendentemente:");
+        for (int m = 0; m < vectorC.length; m++) {
+            System.out.print(vectorC[m] + " ");
+        }
+
         
         sc.close();
     }

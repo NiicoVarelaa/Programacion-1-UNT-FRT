@@ -27,7 +27,7 @@ public class Ejercicio13 {
             String nombreCompleto = sc.nextLine();
             if (nombreCompleto.length() <= 30) {
                 vectorApellidoNombre[i] = nombreCompleto;
-                vectorLegajo [i] = rd.nextInt(9999999) + 9999999;
+                vectorLegajo [i] = rd.nextInt(99999999) + 9999999;
                 System.out.println("El Numero de Legajo para " + nombreCompleto + " es: " + vectorLegajo[i]);
             } else {
                 System.out.println("Error");

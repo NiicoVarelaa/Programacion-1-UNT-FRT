@@ -2,10 +2,8 @@ import java.util.Random;
 
 public class Ejercicio4 {
     public static void main(String[] args) {
-
         int resultado = sumaNumerosVector();
         System.out.println("El Resultado de la suma de todos los numeros del vector es: " + resultado);
-
     }
 
     public static int sumaNumerosVector() {

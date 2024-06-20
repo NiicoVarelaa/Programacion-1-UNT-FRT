@@ -3,9 +3,7 @@ import java.util.Scanner;
 
 public class Ejercicio7 {
     public static void main(String[] args) {
-
         vectorOrdenado();
-
     }
 
     public static void vectorOrdenado() {
@@ -39,8 +37,8 @@ public class Ejercicio7 {
         }
 
         sc.close();
-
     }
+
 }
 
 // Dado un vector de orden N de valores enteros, ordénelos de menor a mayor.

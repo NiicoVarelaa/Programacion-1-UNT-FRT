@@ -3,12 +3,10 @@ import java.util.Scanner;
 
 public class Ejercicio2 {
     public static void main(String[] args) {
-
-        vectorMostrar();
-
+        mostrarVector();
     }
 
-    public static void vectorMostrar() {
+    public static void mostrarVector() {
         Random rd = new Random();
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese la Cantidad de Números Flotantes que desea Guardar en el Vector");

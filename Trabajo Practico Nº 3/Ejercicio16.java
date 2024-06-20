@@ -3,6 +3,10 @@ import java.util.Scanner;
 
 public class Ejercicio16 {
     public static void main(String[] args) {
+        mostrarVector();
+    }
+
+    private static void mostrarVector() {
         Random rd = new Random();
         Scanner sc = new Scanner(System.in);
 
@@ -39,7 +43,7 @@ public class Ejercicio16 {
             }
         }
 
-        System.out.println("");
+        System.out.println("\n");
         System.out.println("Vector Ordenado");
         System.out.println("");
         for (int i = 0; i < vector.length; i++) {

@@ -44,3 +44,21 @@ public class Ejercicio14 {
     }
 
 }
+
+/* Considerar la siguiente lista de países y sus capitales:
+
+Canadá Ottawa
+Inglaterra Londres
+Francia París
+Alemania Bonn
+India Nueva Delhi
+Israel Jerusalén
+Italia Roma
+Japón Tokio
+México Ciudad de México
+República Popular China Pekín
+Rusia Moscú
+Estados Unidos Washington
+
+Escribir un programa que acepte el nombre de un país y muestre su correspondiente capital y
+viceversa. */

@@ -1,10 +1,12 @@
 import java.util.Random;
-import java.util.Scanner;
 
 public class Ejercicio23 {
     public static void main(String[] args) {
+        mostrarRegistroLluvia();
+    }
+
+    private static void mostrarRegistroLluvia() {
         Random rd = new Random();
-        Scanner sc = new Scanner(System.in);
 
         System.out.println("Cantidad de Lluvia en la Ciudad");
         System.out.println();
@@ -35,6 +37,12 @@ public class Ejercicio23 {
             System.out.println();
         }
 
+        System.out.println();
+        for (int i = 0; i < vectorDiaAgua.length; i++) {
+            System.out.print(vectorDiaAgua[i] + "\t");
+        }
+
+
         int diaMaximo = 0;
         int posiciónMaximo = 0;
 
@@ -57,24 +65,22 @@ public class Ejercicio23 {
             }
         }
 
-        
-
         for (int j = 1; j < matriz[0].length; j++) {
-            int horaMenorAgua = Integer.MAX_VALUE; // Inicializamos con un valor alto
-            int horaMenor = -1; // Para almacenar la hora con menor agua
+            int horaMenorAgua = Integer.MAX_VALUE; 
+            int horaMenor = -1; 
 
             for (int i = 0; i < matriz.length; i++) {
                 if (matriz[i][j] < horaMenorAgua) {
                     horaMenorAgua = matriz[i][j];
-                    horaMenor = matriz[i][0]; // Guardamos la hora correspondiente
+                    horaMenor = matriz[i][0]; 
                 }
             }
 
-            vectorHoraAgua[j] = horaMenor; // Guardar la hora con menor agua para esta columna
+            vectorHoraAgua[j] = horaMenor; 
         }
 
         switch (posiciónMaximo) {
-            case 1:
+            case 0:
                 System.out.println("\n");
                 System.out.println("El Lunes es el Día con Mayor Agua con una Cantidad de: " + diaMaximo + "milimetros");
                 break;
@@ -107,7 +113,7 @@ public class Ejercicio23 {
         }
 
         switch (posiciónMenor) {
-            case 1:
+            case 0:
                 System.out.println("\n");
                 System.out.println("El Lunes es el Día con Menor Agua con una Cantidad de: " + diaMinimo + "milimetros");
                 System.out.println("La Hora en que Menos Agua cayó ese Día fue a las: " + vectorHoraAgua[1] + "hs");
@@ -145,8 +151,6 @@ public class Ejercicio23 {
             default:
                 break;
         }
-
-        sc.close();
     }
 
 }

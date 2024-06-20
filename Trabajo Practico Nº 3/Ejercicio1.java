@@ -2,12 +2,10 @@ import java.util.Random;
 
 public class Ejercicio1 {
     public static void main(String[] args) {
-
-        vectorMostrar();
-
+        mostrarVector();
     }
 
-    public static void vectorMostrar() {
+    public static void mostrarVector() {
         Random rd = new Random();
         int vector [] = new int[10];
 

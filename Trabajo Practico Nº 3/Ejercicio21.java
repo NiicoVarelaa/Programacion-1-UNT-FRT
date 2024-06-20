@@ -3,9 +3,7 @@ import java.util.Scanner;
 
 public class Ejercicio21 {
     public static void main(String[] args) {
-
         mostrarMatrizTranspuesta();
-
     }
 
     private static void mostrarMatrizTranspuesta() {

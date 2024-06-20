@@ -2,6 +2,10 @@ import java.util.Random;
 
 public class Ejercicio17 {
     public static void main(String[] args) {
+        mostrarVector();
+    }
+
+    private static void mostrarVector() {
         Random rd = new Random();
 
         int vector [] = new int [20];
@@ -33,7 +37,6 @@ public class Ejercicio17 {
         for (int i = 0; i < vector.length; i++) {
             System.out.print(vector[i] + " ");
         }
-
     }
 
 }
