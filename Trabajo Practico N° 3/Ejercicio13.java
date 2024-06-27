@@ -25,6 +25,7 @@ public class Ejercicio13 {
             System.out.println("");
             System.out.println("Ingrese el Apellido y el Nombre");
             String nombreCompleto = sc.nextLine();
+            
             if (nombreCompleto.length() <= 30) {
                 vectorApellidoNombre[i] = nombreCompleto;
                 vectorLegajo [i] = rd.nextInt(99999999) + 9999999;

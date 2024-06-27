@@ -18,6 +18,10 @@ public class Ejercicio7 {
             vector [i] = rd.nextInt(100) + 1;
         }
 
+        for (int i = 0; i < vector.length; i++) {
+            System.out.print(vector[i] + " ");
+        }
+
         int aux;
 
         for (int i = 0; i < vector.length-1; i++) {
